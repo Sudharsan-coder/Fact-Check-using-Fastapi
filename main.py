@@ -1,10 +1,7 @@
 from fastapi import FastAPI
 from Answer import findCompleteAnswer
-from pydantic import BaseModel
-app= FastAPI()
 
-class Question(BaseModel):
-    question:str
+app= FastAPI()
 
 @app.get("/")
 async def root():
@@ -12,6 +9,7 @@ async def root():
     return "Welcome to the Question answer api"
 
 @app.post("/answer")
-async def get_answer(Question:Question):
+async def get_answer():
     print("get_answer activated")
-    return findCompleteAnswer(Question.question)
+    question="did ratan tata announce reward for rashid khan?"
+    return findCompleteAnswer(question)
