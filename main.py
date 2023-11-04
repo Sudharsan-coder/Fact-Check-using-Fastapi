@@ -8,7 +8,7 @@ async def root():
     print("root activated")
     return "Welcome to the Question answer api"
 
-@app.post("/answer")
+@app.get("/answer")
 async def get_answer():
     print("get_answer activated")
     question="did ratan tata announce reward for rashid khan?"
