@@ -19,11 +19,64 @@ try:
   logging.set_verbosity_error()
 
 
-  data = read_csv("datas.csv")
-  links = data['Links'].tolist()
-  more_details=data['Passages'].tolist()
-  summarized_data=data['Summary'].tolist()
+  # data = read_csv("datas.csv")
+  links = ['https://newsmobile.in/articles/2023/10/30/fact-check-ratan-tata-did-not-announce-reward-for-rashid-khan-after-afg-defeated-pak/','https://newsmobile.in/articles/2023/10/28/fact-check-viral-post-claiming-n-koreas-kim-jong-un-criticising-us-for-isreal-palestine-conflict-is-false/']
+  more_details=['''In the midsts of ongoing ICC Men’s Cricket World Cup, a claim surfaced on the internet according to which Industralist Ratan Tata announced a reward of whopping Rs 10 crore for Afghanistan cricketer Rashid Khan. The claim also stated that Pakistan had complain to ICC aganist Rasid Khan during his victory celebration with Indian flag and ICC fined him for Rs 55 lakh aganist Rasid Khan but Ratan Tata declare 10 crore to Rasid Khan.
 
+One of the posts read: “Ratan Tata has once again shown his greatness.
+
+Rashid Khan, Afghanistan spinner, after defeating NaPak, took the Indian flag and ran around the ground on victory lap and shouted Bharat Mata ki Jai.
+
+NaPak complained to ICC about his action.
+
+ICC and all other world sports bodies, as always, show staunch opposition any ‘Bharatiya’ eulogization.
+
+ICC imposed a fine of Rs 55 lakhs on Rashid Khan.
+
+Ratan Tata, by saying that the person who showed respect to our National Flag should be lauded. Tata announced that he would not only pay the fine amount of Rs 55 lakhs but also reward Rashid Khan with a whopping amount of Rs 10 crore.
+
+Hail Ratan Tata 🙏🙏🙏
+
+*Jai Hind*🇮🇳🇮🇳🇮🇳🇮🇳🇮🇳
+
+This is *TATA*”
+
+The above post can be seen here. More such posts can be seen here and here.
+
+The claim started doing rounds after Afghanistan defeated Pakistan in the World Cup clash on October 23, 2023, following which the Afghanistan team took a victory lap of the MA Chidambaram Stadium in Chennai to celebrate their historic win. During the celebration, Rashid Khan could be seen holding the Indian flag.
+
+NewsMobile fact-checked the above claim and found it to be false.
+
+Ratan Tata on Monday took to X (formerly known as Twitter) to refute the claim.
+
+Tata clarified that he did not make any such announcement and he has no connection with cricket.
+
+“I have made no suggestions to the ICC or any cricket faculty about any cricket member regarding a fine or reward to any players. I have no connection to cricket whatsoever Please do not believe WhatsApp forwards and videos of such nature unless they come from my official platforms,” he wrote on X.
+
+I have made no suggestions to the ICC or any cricket faculty about any cricket member regarding a fine or reward to any players.
+
+I have no connection to cricket whatsoever
+
+Please do not believe WhatsApp forwards and videos of such nature unless they come from my official…
+
+Hence, it can be concluded that the viral claim is false.''','''The conflict between Israel and Hamas has so far resulted in over 1,400 reported casualties in Israel and nearly 5,000 in Gaza. Meanwhile, a video of North Korea’s leader Kim Jong-Un speaking about the Israel-Palestine conflict has gone viral on social media claiming that he was talking about the recent Isreal-Palestine war and criticising US President Joe Biden for the conflict.
+
+A Facebook user shared this video and wrote: “Guess Who Made A Statement About Israel-Hamas. First time Kim Jong-Un has come out to speak on global issues, this is serious.”
+
+This Facebook post can be seen here.
+
+It is being widely shared on Facebook and X with a similar claim.
+
+NewMobile fact-checked the above claim, and found it to be false.
+
+Running a Reverse Image Search of the video keyframes, the NM team found the same visual in The Guardian report, dated October 2020, saying, the viral video is of the 75th anniversary of North Korea’s ruling Party, the Workers’ Party of Korea where Kim Jong-Un got emotional while speaking at a military parade in Pyongyang. He also addressed his impoverished people who have been left battered by typhoons, the coronavirus pandemic, and sanctions. Nowhere in the report, Jong-Un has addressed the Israel-Palestine conflict.
+
+A video report by BBC, dated October 13, 2020, shows similar dress as seen in the viral video. According to the report, North Korean leader Kim Jong-Un got emotional during a speech at a military parade and issued a rare apology for his failure to guide the country through tumultuous times exacerbated by the coronavirus outbreak. He also thanked his troops for their efforts against the pandemic and recent natural disasters.
+
+Searching further, our team also found the transcript of the speech made by Kim Jong Un on October 10, 2020, which was translated into English by the Korean Central News Agency. However, there was no mention of the Israel-Palestine conflict in the entire speech. Click here to read the translated speech.
+
+Thus, it is confirmed that the viral video is from 2020 when Kim Jong-Un gave a speech at a military parade. It was NOT related to the ongoing Israel-Hamas conflict.''']
+  summarized_data=['''The claim started doing rounds after Afghanistan defeated Pakistan in the World Cup clash on October 23, 2023. The Afghanistan team took a victory lap of the MA Chidambaram Stadium in Chennai to celebrate their historic win. During the celebration, Rashid Khan could be seen holding the Indian flag.''','''A video of North Korea’s leader Kim Jong-Un speaking about the Israel-Palestine conflict has gone viral on social media. A Facebook user shared this video and wrote: “Guess Who Made A Statement About Israel-Hamas.” NM fact-checked the above claim, and found it to be false.''']
   def findCompleteAnswer(question):
 
     model = SentenceTransformer('sentence-transformers/msmarco-distilbert-base-tas-b')
